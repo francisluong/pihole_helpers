@@ -1,0 +1,32 @@
+[project]
+name = "pihole_helpers"
+version = "0.1.0"
+description = "CLI helpers for managing Pi-hole installations."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.3.1",
+    "keyring>=25.7.0",
+    "rich>=14.2.0",
+]
+
+[project.scripts]
+pihole_helpers = "pihole_helpers.cli:main"
+
+[build-system]
+requires = [
+    "uv_build>=0.9.18,<0.10.0"
+]
+build-backend = "uv_build"
+
+[tool.uv.workspace]
+members = [
+    "pihole_helpers",
+]
+
+[dependency-groups]
+dev = [
+    "black[d]>=25.12.0",
+    "pytest>=9.0.2",
+]
+
